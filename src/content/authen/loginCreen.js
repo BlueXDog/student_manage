@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
 import firebase from "firebase/app"
+import { Redirect } from 'react-router';
 import "firebase/auth"
 // Configure Firebase
 var firebaseConfig = {
@@ -19,8 +20,9 @@ const uiConfig = {
   signInFlow: 'popup',
   // We will display Google and Facebook as auth providers.
   signInOptions: [
-    firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-    firebase.auth.FacebookAuthProvider.PROVIDER_ID
+    // firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+    // firebase.auth.FacebookAuthProvider.PROVIDER_ID
+    firebase.auth.EmailAuthProvider.PROVIDER_ID,
   ],
   callbacks: {
     // Avoid redirects after sign-in.
@@ -50,9 +52,10 @@ function SignInScreen() {
   }
   return (
     <div>
-      <h1>My App</h1>
-      <p>Welcome {firebase.auth().currentUser.displayName}! You are now signed-in!</p>
-      <a onClick={() => firebase.auth().signOut()}>Sign-out</a>
+      {/* <h1>My App</h1> */}
+      {/* <p>Welcome {firebase.auth().currentUser.displayName}! You are now signed-in!</p> */}
+      {/* <a onClick={() => firebase.auth().signOut()}>Sign-out</a> */}
+      <Redirect to="/dash1" />
     </div>
   );
 }
