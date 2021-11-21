@@ -2,7 +2,7 @@
 
 {
     Students : {
-        "id": {
+        <student's id>: {
             name : <student's name>,
             age : <age>,
             gender : <gender>,
@@ -13,7 +13,7 @@
         ....
     },
     Trainer : {
-        "id" : {
+        <trainer's id> : {
             name : <trainer's name>,
             age : <age>,
             gender : <gender>,
@@ -24,12 +24,12 @@
         ......
     },
     TrainingHistory : {
-        place1 : {
+        <place's name> : [{
             Trainer : [<trainer's id>, <trainer's id>, ....],
             Students : [<student's id>, <student's id>, ....],
             Time : <Class's time>,
             .....
-        },
+        },....]
 
         
     }
