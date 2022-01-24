@@ -39,26 +39,27 @@ Mô tả các trường thông tin trong bảng :
 
 #### Structure :
 
-    Schools : {
+    Schools_Info : {
         school_name : < school name >,
-        school_owners : < array of school owner id >,
+        school_owner : < school owner id >,
         school_trainers: < array of school trainer id >,
         school_students : < array of student id >
         school_head_location : < school location >,
-        scholl_phone_number: < school phone number >
+        school_phone_number: < school phone number >
         school_description : < school description >,
         school_classes : {
             < class_id > : {
                 class_name : < class name >,
                 class_location : < class location >,
                 class_trainers : < array of class trainer's id >,
+                class_students : < array of class student's id >
                 class_description : < class's description >,
                 other_info : < other information >
-                TrainingHistory : {
+                training_history : {
                     < record id > : [{
-                        Trainer : < array of trainer's id >,
-                        Students : < array of student's id >,
-                        Time : <Class's time>,
+                        trainers : < array of trainer's id >,
+                        students : < array of student's id >,
+                        time : <Class's time>,
                         .....
                     },....]
             },....
@@ -71,6 +72,23 @@ Collection này gồm các thông tin của võ đường, các record hoạt đ
 
 Mô tả các trường thông tin trong bảng :
 
-| STT | Name | Type | Description |
-| --- | ---- | ---- | ----------- |
-|1||||
+| STT | Name                 | Type         | Description                                                 |
+| --- | -------------------- | ------------ | ----------------------------------------------------------- |
+| 1   | school_name          | string       | Tên của võ đường                                            |
+| 2   | school_owner         | string       | id của người sáng lập võ đường, trỏ đến bảng persional info |
+| 3   | school_trainers      | string array | id của các huấn luyện viên của võ đường                     |
+| 4   | school_head_location | string       | trụ sở của võ đường                                         |
+| 5   | school_phone_number  | string       | số điện thoại của võ đường                                  |
+| 6   | school_description   | string       | Mô tả ngắn gọn về võ đường                                  |
+| 7   | school_classes       | object       | trường thông tin về các class trong một võ đường            |
+| 8   | class_id             | string       | id của một classs                                           |
+| 9   | class_name           | string       | tên của lớp học                                             |
+| 10  | class_location       | string       | địa chỉ lớp học                                             |
+| 11  | class_trainers       | string array | id của các huấn luyện viên của võ đường                     |
+| 12  | class_description    | string       | mô tả ngắn gọn về võ đường                                  |
+| 13  | other_info           | string       | các thông tin khác về võ đường                              |
+| 14  | TrainingHistory      | object       | trường thông tin mô tả về lịch sử luyện tập của võ đường    |
+| 15  | record_id            | string       | id của bản ghi                                              |
+| 16  | trainers             | string array | array id của các huấn luyện viên của buổi học               |
+| 17  | students             | string array | array id của các học sinh tham gia buổi học                 |
+| 18  | time                 | time         | thời điểm diễn ra buổi học                                  |
